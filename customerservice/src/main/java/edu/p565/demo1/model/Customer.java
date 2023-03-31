@@ -2,16 +2,21 @@ package edu.p565.demo1.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @NotEmpty(message = "name cannot be empty.")
     private String name;
 
-
-    @NotEmpty(message = "email cannot be empty.")
     private String email;
 
 
